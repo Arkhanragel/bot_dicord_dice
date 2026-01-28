@@ -46,7 +46,7 @@ const CHALLENGE_COMMAND = {
 
 const D20_COMMAND = {
   name: 'd20',
-  description: 'Landa el Dado Maldito',
+  description: 'Lanza el Dado Maldito',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
