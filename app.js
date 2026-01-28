@@ -156,6 +156,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
   }
 if (type === InteractionType.MESSAGE_COMPONENT) {
     const componentId = data.custom_id;
+    const username = req.body.member?.user?.username || req.body.user?.username || 'Usuario';
 
     if (componentId === DICE_BUTTON_ID) {
       const roll = rollD21();
@@ -187,7 +188,7 @@ try {
         const blob = new Blob([imageBuffer], { type: 'image/jpg' });
         formData.append('files[0]', blob, fileName);
         formData.append('payload_json', JSON.stringify({
-          content: `🎲 Resultado: **${roll}**`,
+          content: `${username} ha lanzado un D20 y obtuvo **${roll}**`,
           embeds: [
             {
               title: `D20: ${roll}`,
@@ -243,7 +244,7 @@ try {
         const blob = new Blob([imageBuffer], { type: 'image/jpg' });
         formData.append('files[0]', blob, fileName);
         formData.append('payload_json', JSON.stringify({
-          content: `🎲 Resultado: **${roll}**`,
+          content: `${username} ha lanzado un D6 y obtuvo **${roll}**`,
           embeds: [
             {
               title: `D6: ${roll}`,
@@ -299,7 +300,7 @@ try {
         const blob = new Blob([imageBuffer], { type: 'image/jpg' });
         formData.append('files[0]', blob, fileName);
         formData.append('payload_json', JSON.stringify({
-          content: `🎲 Resultado: **${roll}**`,
+          content: `${username} ha lanzado un D4 y obtuvo **${roll}**`,
           embeds: [
             {
               title: `D4: ${roll}`,
