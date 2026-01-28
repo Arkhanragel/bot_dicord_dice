@@ -44,13 +44,13 @@ const CHALLENGE_COMMAND = {
   contexts: [0, 2],
 };
 
-const DICE_COMMAND = {
-  name: 'dice',
+const D20_COMMAND = {
+  name: 'd20',
   description: 'Roll a 21-sided die',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 };
-const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND,DICE_COMMAND];
+const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND, D20_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
