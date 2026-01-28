@@ -51,6 +51,15 @@ const D20_COMMAND = {
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 };
-const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND, D20_COMMAND];
+
+const D6_COMMAND = {
+  name: 'd6',
+  description: 'Lanza el Dado Maldito',
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND, D20_COMMAND, D6_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
