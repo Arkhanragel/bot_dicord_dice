@@ -46,7 +46,7 @@ const CHALLENGE_COMMAND = {
 
 const D20_COMMAND = {
   name: 'd20',
-  description: 'Roll a 21-sided die',
+  description: 'Landa el Dado Maldito',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
